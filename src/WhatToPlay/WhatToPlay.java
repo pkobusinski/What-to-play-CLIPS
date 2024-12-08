@@ -36,18 +36,29 @@ public class WhatToPlay implements ActionListener {
         jfrm.getContentPane().setLayout(new GridLayout(3,1));
         jfrm.setSize(500,300);
         jfrm.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        jfrm.setLocationRelativeTo(null);
 
         JPanel displayPanel = new JPanel();
+        displayPanel.setBackground(Color.BLACK);
         displayLabel = new JLabel();
+        displayLabel.setForeground(Color.WHITE);
         displayPanel.add(displayLabel);
 
         choicesPanel = new JPanel();
+        choicesPanel.setBackground(Color.BLACK);
+        choicesPanel.setForeground(Color.WHITE);
+
         choicesButtons = new ButtonGroup();
 
         JPanel buttonPanel = new JPanel();
+        buttonPanel.setBackground(Color.BLACK);
+        buttonPanel.setForeground(Color.WHITE);
 
         nextButton = new JButton(resources.getString("Next"));
         nextButton.setActionCommand("Next");
+        nextButton.setBackground(Color.WHITE);
+        nextButton.setForeground(Color.BLACK);
+        nextButton.setFocusPainted(false);
         buttonPanel.add(nextButton);
         nextButton.addActionListener(this);
 
@@ -88,6 +99,9 @@ public class WhatToPlay implements ActionListener {
 
             rButton = new JRadioButton(resources.getString(answer),true);
             rButton.setActionCommand(answer);
+            rButton.setBackground(Color.BLACK);
+            rButton.setForeground(Color.WHITE);
+            rButton.setFocusPainted(false);
             choicesPanel.add(rButton);
             choicesButtons.add(rButton);
         }

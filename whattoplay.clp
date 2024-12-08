@@ -514,7 +514,7 @@
 (defrule result-french-horn
 ?f1 <- (wait)
 ?f2 <- (state-list)
-(aboutNerves answerJustLikeMe)
+(aboutNervesOfSteel answerJustLikeMe)
 =>
 (retract ?f1 ?f2)
 (assert (state-list
@@ -706,7 +706,7 @@
 (defrule result-trumpet
 ?f1 <- (wait)
 ?f2 <- (state-list)
-(aboutLoudSoft answerLoud)
+(aboutLoudSoft answerLouder)
 =>
 (retract ?f1 ?f2)
 (assert (state-list
