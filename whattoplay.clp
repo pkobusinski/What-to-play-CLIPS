@@ -2,7 +2,7 @@
 ;;;   		What to play?
 ;;;
 ;;;     This expert system helps determine the best
-;;;	musical instrument based on user preferences.
+;;;	    musical instrument based on user preferences.
 ;;;
 ;;;======================================================
 
@@ -13,10 +13,7 @@
 (deftemplate state-list
 	(slot content)
 	(slot about)
-	(slot numOfAnswers (default 0))
-	(slot answer1 (default -))
-	(slot answer2 (default -))
-	(slot answer3 (default -))
+	(multislot answers)
 	(slot is-result (default No))
 )
 
@@ -35,7 +32,7 @@
 (assert (state-list
 	(content firstPage)
 	(about first)
-	(numOfAnswers 0)
+	(answers)
 	(is-result No)
 )))
 
@@ -51,10 +48,7 @@
 (assert (state-list
 	(content questionHowOld)
 	(about aboutAge)
-	(numOfAnswers 3)
-	(answer1 answer0to5)
-	(answer2 answer6to12)
-	(answer3 answer13plus)
+	(answers answer0to5 answer6to12 answer13plus)
 	(is-result No)
 )))
 
@@ -67,10 +61,7 @@
 (assert (state-list
 	(content questionChauffeur)
 	(about aboutUnlimitedTime)
-	(numOfAnswers 2)
-	(answer1 answerYesChauffeur)
-	(answer2 answerNotReally)
-	(answer3 -)
+	(answers answerYesChauffeur answerNotReally)
 	(is-result No)
 )))
 
@@ -83,10 +74,7 @@
 (assert (state-list
 	(content questionChildProdigy)
 	(about aboutChildProdigy)
-	(numOfAnswers 2)
-	(answer1 answerYes)
-	(answer2 answerNo)
-	(answer3 -)
+	(answers answerYes answerNo)
 	(is-result No)
 )))
 
@@ -99,10 +87,7 @@
 (assert (state-list
 	(content questionPracticeTime)
 	(about aboutPracticeTime)
-	(numOfAnswers 2)
-	(answer1 answerYes2)
-	(answer2 answerNoGetPlaying)
-	(answer3 -)
+	(answers answerYes2 answerNoGetPlaying)
 	(is-result No)
 )))
 
@@ -115,10 +100,7 @@
 (assert (state-list
 	(content questionMusicalAbility)
 	(about aboutMusicalAbility)
-	(numOfAnswers 3)
-	(answer1 answerNotAnIota)
-	(answer2 answerYesAmazing)
-	(answer3 answerHaveSome)
+	(answers answerYesAmazing answerHaveSome answerNotAnIota)
 	(is-result No)
 )))
 
@@ -131,10 +113,7 @@
 (assert (state-list
 	(content questionNervesOfSteel)
 	(about aboutNervesOfSteel)
-	(numOfAnswers 2)
-	(answer1 answerNotQuite)
-	(answer2 answerJustLikeMe)
-	(answer3 -)
+	(answers answerNotQuite answerJustLikeMe)
 	(is-result No)
 )))
 
@@ -147,10 +126,7 @@
 (assert (state-list
 	(content questionFamilyMad)
 	(about aboutFamilyMad)
-	(numOfAnswers 2)
-	(answer1 answerWouldntIJust)
-	(answer2 answerNotBrat)
-	(answer3 -)
+	(answers answerWouldntIJust answerNotBrat)
 	(is-result No)
 )))
 
@@ -163,10 +139,7 @@
 (assert (state-list
 	(content questionComposer)
 	(about aboutComposer)
-	(numOfAnswers 2)
-	(answer1 answerYesBeethoven)
-	(answer2 answerNotParticularly)
-	(answer3 -)
+	(answers answerYesBeethoven answerNotParticularly)
 	(is-result No)
 )))
 
@@ -179,10 +152,7 @@
 (assert (state-list
 	(content questionMozartMcCartney)
 	(about aboutMozartMcCartney)
-	(numOfAnswers 2)
-	(answer1 answerMozart)
-	(answer2 answerMcCartney)
-	(answer3 -)
+	(answers answerMozart answerMcCartney)
 	(is-result No)
 )))
 
@@ -195,10 +165,7 @@
 (assert (state-list
 	(content questionCenterOfAttention)
 	(about aboutAttention)
-	(numOfAnswers 2)
-	(answer1 answerYesStar)
-	(answer2 answerTeamPlayer)
-	(answer3 -)
+	(answers answerYesStar answerTeamPlayer)
 	(is-result No)
 )))
 
@@ -211,10 +178,7 @@
 (assert (state-list
 	(content questionJazz)
 	(about aboutJazz)
-	(numOfAnswers 2)
-	(answer1 answerNoise)
-	(answer2 answerSure)
-	(answer3 -)
+	(answers answerNoise answerSure)
 	(is-result No)
 )))
 
@@ -227,10 +191,7 @@
 (assert (state-list
 	(content questionBigHouse)
 	(about aboutBigHouse)
-	(numOfAnswers 3)
-	(answer1 answerChurch)
-	(answer2 answerPlenty)
-	(answer3 answerCompact)
+	(answers answerChurch answerPlenty answerCompact)
 	(is-result No)
 )))
 
@@ -243,10 +204,7 @@
 (assert (state-list
 	(content questionHateNeighbours)
 	(about aboutNeighbours)
-	(numOfAnswers 2)
-	(answer1 answerPassion)
-	(answer2 answerNicePeople)
-	(answer3 -)
+	(answers answerPassion answerNicePeople)
 	(is-result No)
 )))
 
@@ -259,10 +217,7 @@
 (assert (state-list
 	(content questionOrchestra)
 	(about aboutOrchestra)
-	(numOfAnswers 3)
-	(answer1 answerPeopleNoise)
-	(answer2 answerSymphony)
-	(answer3 answerBaroque)
+	(answers answerPeopleNoise answerSymphony answerBaroque)
 	(is-result No)
 )))
 
@@ -275,10 +230,7 @@
 (assert (state-list
 	(content questionFolkMusic)
 	(about aboutFolkMusic)
-	(numOfAnswers 2)
-	(answer1 answerFlowers)
-	(answer2 answerHippy)
-	(answer3 -)
+	(answers answerFlowers answerHippy)
 	(is-result No)
 )))
 
@@ -291,10 +243,7 @@
 (assert (state-list
 	(content questionHeavyWeights)
 	(about aboutHeavyWeights)
-	(numOfAnswers 2)
-	(answer1 answerSuperman)
-	(answer2 answerWimp)
-	(answer3 -)
+	(answers answerSuperman answerWimp)
 	(is-result No)
 )))
 
@@ -307,10 +256,7 @@
 (assert (state-list
 	(content questionSpitCondensation)
 	(about aboutSpitCondensation)
-	(numOfAnswers 2)
-	(answer1 answerYuck)
-	(answer2 answerMusicAboveHygiene)
-	(answer3 -)
+	(answers answerYuck answerMusicAboveHygiene)
 	(is-result No)
 )))
 
@@ -323,10 +269,7 @@
 (assert (state-list
 	(content questionRhythmTiming)
 	(about aboutRhythmTiming)
-	(numOfAnswers 2)
-	(answer1 answerOkIGuess)
-	(answer2 answerMetronome)
-	(answer3 -)
+	(answers answerOkIGuess answerMetronome)
 	(is-result No)
 )))
 
@@ -339,10 +282,7 @@
 (assert (state-list
 	(content questionJokes)
 	(about aboutJokes)
-	(numOfAnswers 2)
-	(answer1 answerGoodnessNo)
-	(answer2 answerGoodLaugh)
-	(answer3 -)
+	(answers answerGoodnessNo answerGoodLaugh)
 	(is-result No)
 )))
 
@@ -355,10 +295,7 @@
 (assert (state-list
 	(content questionChallenge)
 	(about aboutChallenge)
-	(numOfAnswers 3)
-	(answer1 answerLife)
-	(answer2 answerChallenge)
-	(answer3 answerRealChallenge)
+	(answers answerLife answerChallenge answerRealChallenge)
 	(is-result No)
 )))
 
@@ -371,10 +308,7 @@
 (assert (state-list
 	(content questionReeds)
 	(about aboutFiddling)
-	(numOfAnswers 2)
-	(answer1 answerTooMuchHassle)
-	(answer2 answerLove)
-	(answer3 -)
+	(answers answerTooMuchHassle answerLove)
 	(is-result No)
 )))
 
@@ -387,10 +321,7 @@
 (assert (state-list
 	(content questionThatOrThat)
 	(about aboutLoudSoft)
-	(numOfAnswers 2)
-	(answer1 answerLouder)
-	(answer2 answerElegant)
-	(answer3 -)
+	(answers answerLouder answerElegant)
 	(is-result No)
 )))
 
@@ -403,10 +334,7 @@
 (assert (state-list
 	(content questionMoonlight)
 	(about aboutMoonlight)
-	(numOfAnswers 2)
-	(answer1 answerSolo)
-	(answer2 answerDefNot)
-	(answer3 -)
+	(answers answerSolo answerDefNot)
 	(is-result No)
 )))
 
@@ -419,10 +347,7 @@
 (assert (state-list
 	(content questionSitOrStand)
 	(about aboutSitOrStand)
-	(numOfAnswers 2)
-	(answer1 answerSit)
-	(answer2 answerStand)
-	(answer3 -)
+	(answers answerSit answerStand)
 	(is-result No)
 )))
 
@@ -440,10 +365,7 @@
 (assert (state-list
 	(content resultHarp)
 	(about -)
-	(numOfAnswers 0)
-	(answer1 -)
-	(answer2 -)
-	(answer3 -)
+	(answers)
 	(is-result Yes)
 )))
 
@@ -456,10 +378,7 @@
 (assert (state-list
 	(content resultCombTissue)
 	(about -)
-	(numOfAnswers 0)
-	(answer1 -)
-	(answer2 -)
-	(answer3 -)
+	(answers)
 	(is-result Yes)
 )))
 
@@ -472,10 +391,7 @@
 (assert (state-list
 	(content resultViolin)
 	(about -)
-	(numOfAnswers 0)
-	(answer1 -)
-	(answer2 -)
-	(answer3 -)
+	(answers)
 	(is-result Yes)
 )))
 
@@ -488,10 +404,7 @@
 (assert (state-list
 	(content resultPiano)
 	(about -)
-	(numOfAnswers 0)
-	(answer1 -)
-	(answer2 -)
-	(answer3 -)
+	(answers)
 	(is-result Yes)
 )))
 
@@ -504,10 +417,7 @@
 (assert (state-list
 	(content resultRecorder)
 	(about -)
-	(numOfAnswers 0)
-	(answer1 -)
-	(answer2 -)
-	(answer3 -)
+	(answers)
 	(is-result Yes)
 )))
 
@@ -520,10 +430,7 @@
 (assert (state-list
 	(content resultFrenchHorn)
 	(about -)
-	(numOfAnswers 0)
-	(answer1 -)
-	(answer2 -)
-	(answer3 -)
+	(answers)
 	(is-result Yes)
 )))
 
@@ -536,10 +443,7 @@
 (assert (state-list
 	(content resultTuba)
 	(about -)
-	(numOfAnswers 0)
-	(answer1 -)
-	(answer2 -)
-	(answer3 -)
+	(answers)
 	(is-result Yes)
 )))
 
@@ -552,10 +456,7 @@
 (assert (state-list
 	(content resultDoubleBass)
 	(about -)
-	(numOfAnswers 0)
-	(answer1 -)
-	(answer2 -)
-	(answer3 -)
+	(answers)
 	(is-result Yes)
 )))
 
@@ -568,10 +469,7 @@
 (assert (state-list
 	(content resultOrgan)
 	(about -)
-	(numOfAnswers 0)
-	(answer1 -)
-	(answer2 -)
-	(answer3 -)
+	(answers)
 	(is-result Yes)
 )))
 
@@ -584,10 +482,7 @@
 (assert (state-list
 	(content resultAcousticGuitar)
 	(about -)
-	(numOfAnswers 0)
-	(answer1 -)
-	(answer2 -)
-	(answer3 -)
+	(answers)
 	(is-result Yes)
 )))
 
@@ -600,10 +495,7 @@
 (assert (state-list
 	(content resultDigitalPiano)
 	(about -)
-	(numOfAnswers 0)
-	(answer1 -)
-	(answer2 -)
-	(answer3 -)
+	(answers)
 	(is-result Yes)
 )))
 
@@ -616,10 +508,7 @@
 (assert (state-list
 	(content resultOboe)
 	(about -)
-	(numOfAnswers 0)
-	(answer1 -)
-	(answer2 -)
-	(answer3 -)
+	(answers)
 	(is-result Yes)
 )))
 
@@ -632,10 +521,7 @@
 (assert (state-list
 	(content resultPercussion)
 	(about -)
-	(numOfAnswers 0)
-	(answer1 -)
-	(answer2 -)
-	(answer3 -)
+	(answers)
 	(is-result Yes)
 )))
 
@@ -648,10 +534,7 @@
 (assert (state-list
 	(content resultTrombone)
 	(about -)
-	(numOfAnswers 0)
-	(answer1 -)
-	(answer2 -)
-	(answer3 -)
+	(answers)
 	(is-result Yes)
 )))
 
@@ -664,10 +547,7 @@
 (assert (state-list
 	(content resultBassoon)
 	(about -)
-	(numOfAnswers 0)
-	(answer1 -)
-	(answer2 -)
-	(answer3 -)
+	(answers)
 	(is-result Yes)
 )))
 
@@ -680,10 +560,7 @@
 (assert (state-list
 	(content resultCello)
 	(about -)
-	(numOfAnswers 0)
-	(answer1 -)
-	(answer2 -)
-	(answer3 -)
+	(answers)
 	(is-result Yes)
 )))
 
@@ -696,10 +573,7 @@
 (assert (state-list
 	(content resultViola)
 	(about -)
-	(numOfAnswers 0)
-	(answer1 -)
-	(answer2 -)
-	(answer3 -)
+	(answers)
 	(is-result Yes)
 )))
 
@@ -712,10 +586,7 @@
 (assert (state-list
 	(content resultTrumpet)
 	(about -)
-	(numOfAnswers 0)
-	(answer1 -)
-	(answer2 -)
-	(answer3 -)
+	(answers)
 	(is-result Yes)
 )))
 
@@ -728,10 +599,7 @@
 (assert (state-list
 	(content resultFlute)
 	(about -)
-	(numOfAnswers 0)
-	(answer1 -)
-	(answer2 -)
-	(answer3 -)
+	(answers)
 	(is-result Yes)
 )))
 
@@ -744,10 +612,7 @@
 (assert (state-list
 	(content resultSaxophone)
 	(about -)
-	(numOfAnswers 0)
-	(answer1 -)
-	(answer2 -)
-	(answer3 -)
+	(answers)
 	(is-result Yes)
 )))
 
@@ -760,10 +625,7 @@
 (assert (state-list
 	(content resultClarinet)
 	(about -)
-	(numOfAnswers 0)
-	(answer1 -)
-	(answer2 -)
-	(answer3 -)
+	(answers)
 	(is-result Yes)
 )))
 
@@ -776,10 +638,7 @@
 (assert (state-list
 	(content resultLute)
 	(about -)
-	(numOfAnswers 0)
-	(answer1 -)
-	(answer2 -)
-	(answer3 -)
+	(answers)
 	(is-result Yes)
 )))
 
@@ -792,9 +651,6 @@
 (assert (state-list
 	(content resultHarpsichord)
 	(about -)
-	(numOfAnswers 0)
-	(answer1 -)
-	(answer2 -)
-	(answer3 -)
+	(answers)
 	(is-result Yes)
 )))

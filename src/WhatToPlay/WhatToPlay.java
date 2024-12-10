@@ -89,15 +89,15 @@ public class WhatToPlay implements ActionListener {
             nextButton.setText(resources.getString("Next"));
         }
 
-        PrimitiveValue numOfAnswers = clips.eval(evalStr).get(0).getFactSlot("numOfAnswers");
+        PrimitiveValue answers = clips.eval(evalStr).get(0).getFactSlot("answers");
         choicesPanel.removeAll();
         choicesButtons = new ButtonGroup();
 
-        for (int i = 0; i < numOfAnswers.intValue(); i++) {
+        for (int i = 0; i < answers.size(); i++) {
             JRadioButton rButton;
-            String answer = clips.eval(evalStr).get(0).getFactSlot("answer" + (i+1)).toString();
+            String answer = answers.get(i).toString();
 
-            rButton = new JRadioButton(resources.getString(answer),true);
+            rButton = new JRadioButton(resources.getString(answer), true);
             rButton.setActionCommand(answer);
             rButton.setBackground(Color.BLACK);
             rButton.setForeground(Color.WHITE);
@@ -144,7 +144,6 @@ public class WhatToPlay implements ActionListener {
         executionThread.start();
     }
 
-    // Correct
     public void onActionPerformed(ActionEvent ae) throws Exception {
         if (isExecuting) return;
         String evalStr = "(find-all-facts ((?f state-list)) TRUE)";
